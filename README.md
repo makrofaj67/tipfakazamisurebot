@@ -21,4 +21,4 @@ ve aşağıdaki adımları izleyin bu keyleri programa girmemiz gerekecek. benim
 
 https://www.youtube.com/watch?v=qVe7PeC0sUQ&t=215s
 
-8) Programda tivitleri mentionları hashtaglari kendiniz değiştirebilirsiniz. Eğer kaç dakikada bir atılsın sorusuna 0 deyip seçimi kaydederseniz bütün tweetleri aynı anda atar.
+8) Programda tivitleri mentionları hashtaglari kendiniz değiştirebilirsiniz. Eğer kaç dakikada bir atılsın sorusuna 0 deyip seçimi kaydederseniz bütün tweetleri aynı anda atar. Şimdilik tweet kac tivit atılacağa 70'den fazla girerseniz bazen sorun olabiliyor. İlerideki günlerde geçen süreye saat de ekleyeceğim. Şimdilik bu kadar.
