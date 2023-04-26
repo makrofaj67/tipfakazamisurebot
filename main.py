@@ -264,14 +264,16 @@ class Anasayfa(QMainWindow):
 
   if rastgele == "False":
    for i in range(kactivit):
-    print(tweetsx[i] + " " + mentionsline + " " + hashtagsline)
+    atılacaktweet = tweetsx[i] + " " + mentionsline + " " + hashtagsline
+    tweetci.create_tweet(text=atılacaktweet)
     self.atilantweetlcd.display(i + 1)
     time.sleep(kacdakikadabir * 60)
   else:
    shuffled_tweetsx = tweetsx.copy()
    random.shuffle(shuffled_tweetsx)
    for i in range(kactivit):
-    print((shuffled_tweetsx[i]) + " " + mentionsline + " " + hashtagsline)
+    atılacaktweet = (shuffled_tweetsx[i]) + " " + mentionsline + " " + hashtagsline
+    tweetci.create_tweet(text=atılacaktweet)
     self.atilantweetlcd.display(i + 1)
     time.sleep(kacdakikadabir * 60)    
 
