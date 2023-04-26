@@ -6,9 +6,10 @@
 
 pip install tweepy PyQt5
 
-4) İndirdiğiniz zip dosyasının içerisindeki klasörü masaüstüne çıkarın.
-5) Klasörü açın, klasörün içerisindeyken shift'e basılı tutup fare ile sağ tıklayın. Powershell ya da komut istemini burada açın diye bir seçenek çıkacak, ona tıklayın.
-6) Açılan powershell ya da komut istemi penceresinde aşağıdaki satırları girin ve enter'a basın
+4) Yukarıda sağ üst köşede Go to file, Add file, ve code butonları var. Yeşil olan code'a tıklayın. En altta download as zip çıkacak, ona tıklayın ve zip olarak indirin.
+5) İndirdiğiniz zip dosyasının içerisindeki klasörü masaüstüne çıkarın.
+6) Klasörü açın, klasörün içerisindeyken shift'e basılı tutup fare ile sağ tıklayın. Powershell ya da komut istemini burada açın diye bir seçenek çıkacak, ona tıklayın.
+7) Açılan powershell ya da komut istemi penceresinde aşağıdaki satırları girin ve enter'a basın
 
 python main.py
 
