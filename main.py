@@ -6,6 +6,8 @@ import tweepy
 import time
 import threading
 import random
+import tweetolusturma
+import siraylatweetolusturma
 
 app = QApplication(sys.argv)
 
@@ -222,9 +224,12 @@ class Anasayfa(QMainWindow):
 
   while True:
     elapsed_time = self.start_time.msecsTo(QTime.currentTime()) / 1000.0
+    hours = int(elapsed_time // 3600)
     minutes = int(elapsed_time // 60)
     seconds = int(elapsed_time % 60)
+    time_strhours = "{:02d}".format(hours)
     time_str = "{:02d}:{:02d}".format(minutes, seconds)
+    self.gecensurelcdsaat.display(time_strhours)
     self.gecensurelcd.display(time_str)
     threading.Event().wait(0.01)   
  
@@ -234,14 +239,11 @@ class Anasayfa(QMainWindow):
  def tweetle(self):  
   
   with open("hashtaglar.txt", "r") as file:
-    hash = file.readlines()
+    hashtags = file.readlines()
   with open("tweetler.txt", "r") as file:
-    tweetsx = file.readlines()
+    tweets = file.readlines()
   with open("mentionlar.txt", "r") as file:
-    mentionsx = file.readlines()
-
-  mentionsline = " ".join(["@" + line.strip() for line in mentionsx])
-  hashtagsline = " ".join(["#" + line.strip() for line in hash])
+    mentions = file.readlines()
 
   with open("anahtarlar.txt", "r") as file:
     bearertoken = file.readline().strip()
@@ -263,19 +265,21 @@ class Anasayfa(QMainWindow):
   rastgele = ayar[2]
 
   if rastgele == "False":
-   for i in range(kactivit):
-    atılacaktweet = tweetsx[i] + " " + mentionsline + " " + hashtagsline
-    tweetci.create_tweet(text=atılacaktweet)
-    self.atilantweetlcd.display(i + 1)
-    time.sleep(kacdakikadabir * 60)
+    for k in range(kactivit):
+      siraylastringolusturucu = siraylatweetolusturma.SiraylatTweetSec()
+      new_tweet = siraylastringolusturucu.sirayla_tweet_sec(k)
+      tweetci.create_tweet(text=new_tweet)
+      self.atilanensontweet.addItem(new_tweet)
+      self.atilantweetlcd.display(k + 1)
+      time.sleep(kacdakikadabir * 60)
   else:
-   shuffled_tweetsx = tweetsx.copy()
-   random.shuffle(shuffled_tweetsx)
-   for i in range(kactivit):
-    atılacaktweet = (shuffled_tweetsx[i]) + " " + mentionsline + " " + hashtagsline
-    tweetci.create_tweet(text=atılacaktweet)
-    self.atilantweetlcd.display(i + 1)
-    time.sleep(kacdakikadabir * 60)    
+    for i in range(kactivit):
+      stringolusturucu = tweetolusturma.RastgeleTweetSec()
+      new_tweet = stringolusturucu.rastgele_tweet_sec()
+      tweetci.create_tweet(text=new_tweet)
+      self.atilanensontweet.addItem(new_tweet)
+      self.atilantweetlcd.display(i + 1)
+      time.sleep(kacdakikadabir * 60)    
 
 window = Anasayfa()
 window.show()
