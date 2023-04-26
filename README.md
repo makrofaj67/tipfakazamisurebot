@@ -17,5 +17,8 @@ python main.py
 
 https://developer.twitter.com/
 
-8) Burada yeni bir app oluşturun.
-9) Bu app'da tokenlar
+ve aşağıdaki adımları izleyin bu keyleri programa girmemiz gerekecek. benim hesabımda zaten açılmış olduğu için buraları videoya alamadım çok fazla.
+
+https://www.youtube.com/watch?v=qVe7PeC0sUQ&t=215s
+
+8) Programda tivitleri mentionları hashtaglari kendiniz değiştirebilirsiniz. Eğer kaç dakikada bir atılsın sorusuna 0 deyip seçimi kaydederseniz bütün tweetleri aynı anda atar.
