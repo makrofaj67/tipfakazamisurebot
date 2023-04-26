@@ -231,10 +231,8 @@ class Anasayfa(QMainWindow):
  def tweetle_thread(self):
   self.tweetle()
   
- def tweetle(self):
+ def tweetle(self):  
   
-  with open("ayarlar.txt", "r") as file:
-    ayar = file.readlines()
   with open("hashtaglar.txt", "r") as file:
     hash = file.readlines()
   with open("tweetler.txt", "r") as file:
@@ -257,21 +255,25 @@ class Anasayfa(QMainWindow):
   except Exception as e:
     print("Error creating Tweepy client:", e)
   
-  tweetci.create_tweet(text="xtae")
+  with open("ayarlar.txt", "r") as file:
+    ayar = file.readlines()
+
   kactivit = int(ayar[0])
   kacdakikadabir = int(ayar[1])
   rastgele = ayar[2]
 
-
-  
-  
-  self.atilantweetlcd.display(5)
-
-  
- 
-
-   
-    
+  if rastgele == "False":
+   for i in range(kactivit):
+    print(tweetsx[i] + " " + mentionsline + " " + hashtagsline)
+    self.atilantweetlcd.display(i + 1)
+    time.sleep(kacdakikadabir * 60)
+  else:
+   shuffled_tweetsx = tweetsx.copy()
+   random.shuffle(shuffled_tweetsx)
+   for i in range(kactivit):
+    print((shuffled_tweetsx[i]) + " " + mentionsline + " " + hashtagsline)
+    self.atilantweetlcd.display(i + 1)
+    time.sleep(kacdakikadabir * 60)    
 
 window = Anasayfa()
 window.show()
