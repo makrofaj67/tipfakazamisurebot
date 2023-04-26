@@ -1,5 +1,7 @@
 # tipfakazamisurebot
 
+//https://youtu.be/6lNBurHzm-w  bu videoda aşağıdaki adımları göstermeye çalıştım bakabilirsiniz.
+
 1) Microsoft Store'dan python 3.11'i indirin.
 2) Masaüstünde başlat menüsüne tıklayın ve komut istemini çalıştırın.
 3) Komut istemine aşağıdaki satırı girin ve enter'a basın.
