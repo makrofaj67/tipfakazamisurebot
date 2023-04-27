@@ -44,6 +44,8 @@ class RastgeleTweetSec:
             if len(new_tweet) > 280:
                 new_tweet = re.sub(r"(\s@\w+)\s*(?!.*\s@\w+)$", "", new_tweet)
             if len(new_tweet) > 280:
+                new_tweet = re.sub(r"(\s#\w+)\s*(?!.*\s#\w+)$", "", new_tweet)
+            if len(new_tweet) > 280:
                 new_tweet = re.sub(r"(\s@\w+)\s*(?!.*\s@\w+)$", "", new_tweet)
             if len(new_tweet) > 280:
                 new_tweet = re.sub(r"(\s#\w+)\s*(?!.*\s#\w+)$", "", new_tweet)
