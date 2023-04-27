@@ -266,7 +266,7 @@ class Anasayfa(QMainWindow):
 
   if rastgele == "False":
     for k in range(kactivit):
-      siraylastringolusturucu = siraylatweetolusturma3.SiraylatTweetSec()
+      siraylastringolusturucu = siraylatweetolusturma.SiraylatTweetSec()
       new_tweet = siraylastringolusturucu.sirayla_tweet_sec(k)
       #tweetci.create_tweet(text=new_tweet)
       self.atilanensontweet.addItem(new_tweet)
@@ -274,7 +274,7 @@ class Anasayfa(QMainWindow):
       time.sleep(kacdakikadabir * 60)
   else:
     for i in range(kactivit):
-      stringolusturucu = tweetolusturma3.RastgeleTweetSec()
+      stringolusturucu = tweetolusturma.RastgeleTweetSec()
       new_tweet = stringolusturucu.rastgele_tweet_sec()
       #tweetci.create_tweet(text=new_tweet)
       self.atilanensontweet.addItem(new_tweet)
