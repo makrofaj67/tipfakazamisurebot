@@ -6,8 +6,8 @@ import tweepy
 import time
 import threading
 import random
-import tweetolusturma
-import siraylatweetolusturma
+import tweetolusturma3
+import siraylatweetolusturma3
 
 app = QApplication(sys.argv)
 
@@ -225,7 +225,7 @@ class Anasayfa(QMainWindow):
   while True:
     elapsed_time = self.start_time.msecsTo(QTime.currentTime()) / 1000.0
     hours = int(elapsed_time // 3600)
-    minutes = int(elapsed_time // 60)
+    minutes = int((elapsed_time // 60) % 60)
     seconds = int(elapsed_time % 60)
     time_strhours = "{:02d}".format(hours)
     time_str = "{:02d}:{:02d}".format(minutes, seconds)
@@ -266,17 +266,17 @@ class Anasayfa(QMainWindow):
 
   if rastgele == "False":
     for k in range(kactivit):
-      siraylastringolusturucu = siraylatweetolusturma.SiraylatTweetSec()
+      siraylastringolusturucu = siraylatweetolusturma3.SiraylatTweetSec()
       new_tweet = siraylastringolusturucu.sirayla_tweet_sec(k)
-      tweetci.create_tweet(text=new_tweet)
+      #tweetci.create_tweet(text=new_tweet)
       self.atilanensontweet.addItem(new_tweet)
       self.atilantweetlcd.display(k + 1)
       time.sleep(kacdakikadabir * 60)
   else:
     for i in range(kactivit):
-      stringolusturucu = tweetolusturma.RastgeleTweetSec()
+      stringolusturucu = tweetolusturma3.RastgeleTweetSec()
       new_tweet = stringolusturucu.rastgele_tweet_sec()
-      tweetci.create_tweet(text=new_tweet)
+      #tweetci.create_tweet(text=new_tweet)
       self.atilanensontweet.addItem(new_tweet)
       self.atilantweetlcd.display(i + 1)
       time.sleep(kacdakikadabir * 60)    
