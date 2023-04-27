@@ -37,6 +37,3 @@ class RastgeleTweetSec:
 
         return new_tweet
 
-
-kalem = RastgeleTweetSec()
-print(kalem.rastgele_tweet_sec())
