@@ -6,7 +6,7 @@ import tweepy
 import time
 import threading
 import random
-import tweetolusturma3
+import tweetolusturma
 import siraylatweetolusturma
 
 app = QApplication(sys.argv)
