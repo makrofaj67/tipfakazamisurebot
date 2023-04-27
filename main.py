@@ -268,7 +268,7 @@ class Anasayfa(QMainWindow):
     for k in range(kactivit):
       siraylastringolusturucu = siraylatweetolusturma.SiraylatTweetSec()
       new_tweet = siraylastringolusturucu.sirayla_tweet_sec(k)
-      #tweetci.create_tweet(text=new_tweet)
+      tweetci.create_tweet(text=new_tweet)
       self.atilanensontweet.addItem(new_tweet)
       self.atilantweetlcd.display(k + 1)
       time.sleep(kacdakikadabir * 60)
@@ -276,7 +276,7 @@ class Anasayfa(QMainWindow):
     for i in range(kactivit):
       stringolusturucu = tweetolusturma.RastgeleTweetSec()
       new_tweet = stringolusturucu.rastgele_tweet_sec()
-      #tweetci.create_tweet(text=new_tweet)
+      tweetci.create_tweet(text=new_tweet)
       self.atilanensontweet.addItem(new_tweet)
       self.atilantweetlcd.display(i + 1)
       time.sleep(kacdakikadabir * 60)    
