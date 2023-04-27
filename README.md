@@ -28,6 +28,6 @@ https://www.youtube.com/watch?v=qVe7PeC0sUQ&t=215s
 Şimdilik bi kaç problem var 
   * Eğer kaç dakikada bir atılsın sorusuna 0 deyip seçimi kaydederseniz bütün tweetleri aynı anda atar. 
   * Şimdilik tweet kac tivit atılacağa 70'den fazla girerseniz bazen sorun olabiliyor. 
-  * Mention ve hashtag boş kalırsa tweet sonunda # @ eklenir. 
-  * İlerideki günlerde geçen süreye saat de ekleyeceğim. Bir saat süreyi geçerse ne oluyor bilmiyorum. Şimdilik bu kadar.
-  * Bazı tweetler çok uzun olmuş, onları atmaya çalıştığı zaman tweeter izin vermiyor. Ondan dolayı program çalışmayı durduruyor. Uzun tweetleri silerek çözebilirsiniz bi kaç güne tweetleri düzenleyeceğim.
+  * Mention ve hashtag boş kalırsa tweet sonunda # @ eklenir. //hallettim
+  * İlerideki günlerde geçen süreye saat de ekleyeceğim. Bir saat süreyi geçerse ne oluyor bilmiyorum. Şimdilik bu kadar. //hallettim
+  * Bazı tweetler çok uzun olmuş, onları atmaya çalıştığı zaman tweeter izin vermiyor. Ondan dolayı program çalışmayı durduruyor. Uzun tweetleri silerek çözebilirsiniz bi kaç güne tweetleri düzenleyeceğim. //hallettim
