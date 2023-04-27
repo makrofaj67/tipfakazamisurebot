@@ -51,7 +51,4 @@ class RastgeleTweetSec:
                 new_tweet = re.sub(r"(\s#\w+)\s*(?!.*\s#\w+)$", "", new_tweet)            
 
         return new_tweet
-    
-kalem = RastgeleTweetSec()
-print(kalem.rastgele_tweet_sec(4))
 
