@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget 
+from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QMessageBox
 from PyQt5 import uic, QtGui
 from PyQt5.QtCore import QTimer, QTime, QElapsedTimer
 import tweepy
@@ -144,6 +144,7 @@ class Anahtarlar(QWidget):
   self.setWindowIcon(icon)
 
   self.anahtarlarikaydet.clicked.connect(self.funcanahtarlarikaydet)
+
   with open("anahtarlar.txt", "r") as file:
     api_key = file.readline().strip()
     api_key_secret = file.readline().strip()
@@ -170,6 +171,13 @@ class Anahtarlar(QWidget):
    file.write(self.api_key_secret + "\n")   
    file.write(self.access_token + "\n")
    file.write(self.access_token_secret + "\n")
+
+  message_box = QMessageBox()
+  message_box.setText("Anahtarlar kaydedildi!")
+  message_box.setWindowTitle("Bilgi")
+  message_box.exec_()
+
+
 
 class Anasayfa(QMainWindow):
  def __init__(self):
@@ -201,6 +209,10 @@ class Anasayfa(QMainWindow):
   rastgele_mi = self.rastgelecheckbox.isChecked()
   with open("ayarlar.txt", "w") as file:
    file.write(f"{kactivittext}\n{kacdakikatext}\n{rastgele_mi}")
+  message_box = QMessageBox()
+  message_box.setText("Seçimler kaydedildi!")
+  message_box.setWindowTitle("Bilgi")
+  message_box.exec_()
   
  def anahtarlar(self):
   self.anahtarpenceresi=Anahtarlar()
