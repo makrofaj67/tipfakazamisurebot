@@ -278,8 +278,8 @@ class Anasayfa(QMainWindow):
 
   if rastgele == "False":
     for k in range(kactivit):
-      siraylastringolusturucu = siraylatweetolusturma.SiraylatTweetSec()
-      new_tweet = siraylastringolusturucu.sirayla_tweet_sec(k)
+      siraylastringolusturucu = siraylatweetolusturma.RastgeleTweetSec()
+      new_tweet = siraylastringolusturucu.rastgele_tweet_sec(k)
       tweetci.create_tweet(text=new_tweet)
       self.atilanensontweet.addItem(new_tweet)
       self.atilantweetlcd.display(k + 1)
