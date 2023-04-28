@@ -26,8 +26,8 @@ class RastgeleTweetSec:
             new_tweet += f" #{hashtag.strip()}"
         
             selected_tweet = tweets[i]
-            selected_mentions = random.sample(mentions, k=5)
-            selected_hashtags = random.sample(hashtags, k=5)
+            selected_mentions = random.sample(mentions, k=3)
+            selected_hashtags = random.sample(hashtags, k=3)
 
             new_tweet = selected_tweet
             for mention in selected_mentions:
@@ -51,11 +51,7 @@ class RastgeleTweetSec:
                 new_tweet = re.sub(r"(\s#\w+)\s*(?!.*\s#\w+)$", "", new_tweet)
             if len(new_tweet) > 280:
                 new_tweet = re.sub(r"(\s@\w+)\s*(?!.*\s@\w+)$", "", new_tweet)
-            if len(new_tweet) > 280:
-                new_tweet = re.sub(r"(\s#\w+)\s*(?!.*\s#\w+)$", "", new_tweet)
-            if len(new_tweet) > 280:
-                new_tweet = re.sub(r"(\s@\w+)\s*(?!.*\s@\w+)$", "", new_tweet)
-
+                
         return new_tweet
     
 
