@@ -280,18 +280,28 @@ class Anasayfa(QMainWindow):
     for k in range(kactivit):
       siraylastringolusturucu = siraylatweetolusturma.RastgeleTweetSec()
       new_tweet = siraylastringolusturucu.rastgele_tweet_sec(k)
-      tweetci.create_tweet(text=new_tweet)
-      self.atilanensontweet.addItem(new_tweet)
-      self.atilantweetlcd.display(k + 1)
-      time.sleep(kacdakikadabir * 60)
+      try:
+        tweetci.create_tweet(text=new_tweet)
+      except Exception as e:
+        print("Error creating tweet:", e)
+      else:  
+        self.atilanensontweet.addItem(new_tweet)
+        self.atilantweetlcd.display(k + 1)
+      finally:
+        time.sleep(kacdakikadabir * 60)
   else:
     for i in range(kactivit):
       stringolusturucu = tweetolusturma.RastgeleTweetSec()
       new_tweet = stringolusturucu.rastgele_tweet_sec()
-      tweetci.create_tweet(text=new_tweet)
-      self.atilanensontweet.addItem(new_tweet)
-      self.atilantweetlcd.display(i + 1)
-      time.sleep(kacdakikadabir * 60)    
+      try:
+        tweetci.create_tweet(text=new_tweet)
+      except Exception as e:
+        print("Error creating tweet:", e)
+      else:  
+        self.atilanensontweet.addItem(new_tweet)
+        self.atilantweetlcd.display(i + 1)
+      finally:
+        time.sleep(kacdakikadabir * 60)    
 
 window = Anasayfa()
 window.show()
